@@ -1,0 +1,522 @@
+{
+  "type" : "record",
+  "name" : "Tweet",
+  "namespace" : "com.socialzoo",
+  "fields" : [ {
+    "name" : "coordinates",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "double"
+    } ],
+    "default" : null
+  }, {
+    "name" : "created_at",
+    "type" : "long"
+  }, {
+    "name" : "entities",
+    "type" : {
+      "type" : "record",
+      "name" : "Entities",
+      "fields" : [ {
+        "name" : "hashtags",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "HashtagObject",
+            "fields" : [ {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            } ]
+          }
+        }
+      }, {
+        "name" : "symbols",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "SymbolObject",
+            "fields" : [ {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            } ]
+          }
+        }
+      }, {
+        "name" : "media",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "MediaObject",
+            "fields" : [ {
+              "name" : "url",
+              "type" : "string"
+            }, {
+              "name" : "display_url",
+              "type" : "string"
+            }, {
+              "name" : "expanded_url",
+              "type" : "string"
+            }, {
+              "name" : "id",
+              "type" : "long"
+            }, {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "media_url",
+              "type" : "string"
+            }, {
+              "name" : "media_url_https",
+              "type" : "string"
+            }, {
+              "name" : "sizes",
+              "type" : {
+                "type" : "map",
+                "values" : {
+                  "type" : "record",
+                  "name" : "Size",
+                  "fields" : [ {
+                    "name" : "h",
+                    "type" : "int"
+                  }, {
+                    "name" : "resize",
+                    "type" : "int"
+                  }, {
+                    "name" : "w",
+                    "type" : "int"
+                  } ]
+                }
+              }
+            }, {
+              "name" : "type",
+              "type" : "string"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            } ]
+          }
+        }
+      }, {
+        "name" : "urls",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "URLObject",
+            "fields" : [ {
+              "name" : "display_url",
+              "type" : "string"
+            }, {
+              "name" : "expanded_url",
+              "type" : "string"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            }, {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "url",
+              "type" : "string"
+            } ]
+          }
+        }
+      }, {
+        "name" : "user_mentions",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "UserMentionObject",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long"
+            }, {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "name",
+              "type" : "string"
+            }, {
+              "name" : "screen_name",
+              "type" : "string"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            } ]
+          }
+        }
+      }, {
+        "name" : "extended_entities",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "ExtendedEntityObject",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long"
+            }, {
+              "name" : "media_url",
+              "type" : "string"
+            }, {
+              "name" : "media_url_https",
+              "type" : "string"
+            }, {
+              "name" : "url",
+              "type" : "string"
+            }, {
+              "name" : "display_url",
+              "type" : "string"
+            }, {
+              "name" : "expanded_url",
+              "type" : "string"
+            }, {
+              "name" : "sizes",
+              "type" : {
+                "type" : "map",
+                "values" : "Size"
+              }
+            }, {
+              "name" : "type",
+              "type" : "string"
+            }, {
+              "name" : "text",
+              "type" : "string"
+            }, {
+              "name" : "start",
+              "type" : "int"
+            }, {
+              "name" : "end",
+              "type" : "int"
+            }, {
+              "name" : "video_info",
+              "type" : {
+                "type" : "record",
+                "name" : "VideoInfo",
+                "fields" : [ {
+                  "name" : "h",
+                  "type" : "int"
+                }, {
+                  "name" : "w",
+                  "type" : "int"
+                }, {
+                  "name" : "duration_millis",
+                  "type" : "long"
+                }, {
+                  "name" : "variants",
+                  "type" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "record",
+                      "name" : "Variant",
+                      "fields" : [ {
+                        "name" : "bitrate",
+                        "type" : "int"
+                      }, {
+                        "name" : "content_type",
+                        "type" : "string"
+                      }, {
+                        "name" : "url",
+                        "type" : "string"
+                      } ]
+                    }
+                  }
+                } ]
+              }
+            } ]
+          }
+        }
+      } ]
+    }
+  }, {
+    "name" : "favorite_count",
+    "type" : [ "int", "null" ],
+    "default" : 0
+  }, {
+    "name" : "favorited",
+    "type" : "boolean"
+  }, {
+    "name" : "id",
+    "type" : "long"
+  }, {
+    "name" : "in_reply_to_screen_name",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "in_reply_to_status_id",
+    "type" : [ "null", "long" ],
+    "default" : null
+  }, {
+    "name" : "in_reply_to_user_id",
+    "type" : [ "null", "long" ],
+    "default" : null
+  }, {
+    "name" : "lang",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "place",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Place",
+      "fields" : [ {
+        "name" : "bounding_box",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : "double"
+            }
+          }
+        }
+      }, {
+        "name" : "bounding_box_type",
+        "type" : "string"
+      }, {
+        "name" : "geometry",
+        "type" : [ "null", {
+          "type" : "array",
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : "double"
+            }
+          }
+        } ],
+        "default" : null
+      }, {
+        "name" : "geometry_type",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "contained_within",
+        "type" : [ "null", {
+          "type" : "array",
+          "items" : "Place"
+        } ],
+        "default" : null
+      }, {
+        "name" : "street_address",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "country",
+        "type" : "string"
+      }, {
+        "name" : "country_code",
+        "type" : "string"
+      }, {
+        "name" : "full_name",
+        "type" : "string"
+      }, {
+        "name" : "id",
+        "type" : "string"
+      }, {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "place_type",
+        "type" : "string"
+      }, {
+        "name" : "url",
+        "type" : "string"
+      } ]
+    } ],
+    "default" : null
+  }, {
+    "name" : "possibly_sensitive",
+    "type" : "boolean"
+  }, {
+    "name" : "quoted_status",
+    "type" : [ "null", "Tweet" ],
+    "default" : null
+  }, {
+    "name" : "retweeted_status",
+    "type" : [ "null", "Tweet" ],
+    "default" : null
+  }, {
+    "name" : "retweet_count",
+    "type" : "int"
+  }, {
+    "name" : "retweeted",
+    "type" : "boolean"
+  }, {
+    "name" : "truncated",
+    "type" : "boolean"
+  }, {
+    "name" : "source",
+    "type" : "string"
+  }, {
+    "name" : "text",
+    "type" : "string"
+  }, {
+    "name" : "user",
+    "type" : {
+      "type" : "record",
+      "name" : "User",
+      "fields" : [ {
+        "name" : "contributors_enabled",
+        "type" : "boolean"
+      }, {
+        "name" : "created_at",
+        "type" : "long"
+      }, {
+        "name" : "default_profile",
+        "type" : "boolean"
+      }, {
+        "name" : "default_profile_image",
+        "type" : "boolean"
+      }, {
+        "name" : "description",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "entities",
+        "type" : "URLObject"
+      }, {
+        "name" : "favourites_count",
+        "type" : "int"
+      }, {
+        "name" : "followers_count",
+        "type" : "int"
+      }, {
+        "name" : "friends_count",
+        "type" : "int"
+      }, {
+        "name" : "geo_enabled",
+        "type" : "boolean"
+      }, {
+        "name" : "id",
+        "type" : "long"
+      }, {
+        "name" : "is_translator",
+        "type" : "boolean"
+      }, {
+        "name" : "lang",
+        "type" : "string"
+      }, {
+        "name" : "listed_count",
+        "type" : "int"
+      }, {
+        "name" : "location",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "name" : "screen_name",
+        "type" : "string"
+      }, {
+        "name" : "profile_background_color",
+        "type" : "string"
+      }, {
+        "name" : "profile_background_image_url",
+        "type" : "string"
+      }, {
+        "name" : "profile_background_image_url_https",
+        "type" : "string"
+      }, {
+        "name" : "profile_background_tile",
+        "type" : "boolean"
+      }, {
+        "name" : "profile_banner_url",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_image_url",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_image_url_https",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_link_color",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_sidebar_border_color",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_sidebar_fill_color",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_text_color",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "profile_use_background_image",
+        "type" : "boolean"
+      }, {
+        "name" : "protected",
+        "type" : "boolean"
+      }, {
+        "name" : "show_all_inline_media",
+        "type" : "boolean"
+      }, {
+        "name" : "statuses_count",
+        "type" : "int"
+      }, {
+        "name" : "time_zone",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "url",
+        "type" : [ "null", "string" ],
+        "default" : null
+      }, {
+        "name" : "utc_offset",
+        "type" : [ "null", "int" ],
+        "default" : null
+      }, {
+        "name" : "verified",
+        "type" : "boolean"
+      }, {
+        "name" : "withheld_in_countries",
+        "type" : [ "null", {
+          "type" : "array",
+          "items" : "string"
+        } ],
+        "default" : null
+      } ]
+    }
+  }, {
+    "name" : "withheld_in_countries",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "default" : null
+  } ]
+}

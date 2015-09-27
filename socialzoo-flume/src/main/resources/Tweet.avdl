@@ -1,0 +1,170 @@
+@namespace("com.socialzoo")
+protocol TweetProtocol {
+
+	record Size {
+		int h;
+		int resize;
+		int w;
+	}
+
+	record Variant {
+		int bitrate;
+		string content_type;
+		string url;
+	}
+
+	record VideoInfo {
+		int h;
+		int w;
+		long duration_millis;
+		array<Variant> variants;
+	}
+
+	record HashtagObject {
+		int start;
+		int end;
+		string text;
+	}
+
+	record SymbolObject {
+		int start;
+		int end;
+		string text;
+	}
+
+	record MediaObject {
+		string url;
+		string display_url;
+		string expanded_url;
+		long id;
+		int start;
+		int end;
+		string media_url;
+		string media_url_https;
+		map<Size> sizes;
+		string type;
+		string text;
+	}
+
+	record URLObject {
+		string display_url;
+		string expanded_url;
+		string text;
+		int start;
+		int end;
+		string url;
+	}
+
+	record UserMentionObject {
+		long id;
+		int start;
+		int end;
+		string name;
+		string screen_name;
+		string text;
+	}
+
+	record ExtendedEntityObject {
+		long id;
+		string media_url;
+		string media_url_https;
+		string url;
+		string display_url;
+		string expanded_url;
+		map<Size> sizes;
+		string type;
+		string text;
+		int start;
+		int end;
+		VideoInfo video_info;
+	}
+
+	record Entities {
+		array<HashtagObject> hashtags;
+		array<SymbolObject> symbols;
+		array<MediaObject> media;
+		array<URLObject> urls;
+		array<UserMentionObject> user_mentions;
+		array<ExtendedEntityObject> extended_entities;
+	}
+
+	record Place {
+		array<array<array<double>>> bounding_box;
+		string bounding_box_type;
+		union {null, array<array<array<double>>>} geometry = null;
+		union {null, string} geometry_type = null;
+		union {null, array<Place>} contained_within = null;
+		union {null, string} street_address = null;
+		string country;
+		string country_code;
+		string full_name;
+		string id;
+		string name;
+		string place_type;
+		string url;
+	}
+
+	record User {
+		boolean contributors_enabled;
+		long created_at;
+		boolean default_profile;
+		boolean default_profile_image;
+		union {null, string} description = null;
+		URLObject entities;
+		int favourites_count;
+		int followers_count;
+		int friends_count;
+		boolean geo_enabled;
+		long id;
+		boolean is_translator;
+		string lang;
+		int listed_count;
+		union {null, string} location = null;
+		string name;
+		string screen_name;
+		string profile_background_color;
+		string profile_background_image_url;
+		string profile_background_image_url_https;
+		boolean profile_background_tile;
+		union {null, string} profile_banner_url = null;
+		union {null, string} profile_image_url = null;
+		union {null, string} profile_image_url_https = null;
+		union {null, string} profile_link_color = null;
+		union {null, string} profile_sidebar_border_color = null;
+		union {null, string} profile_sidebar_fill_color = null;
+		union {null, string} profile_text_color = null;
+		boolean profile_use_background_image;
+		boolean protected;
+		boolean show_all_inline_media;
+		int statuses_count;
+		union {null, string} time_zone = null;
+		union {null, string} url = null;
+		union {null, int} utc_offset = null;
+		boolean verified;
+		union {null, array<string>} withheld_in_countries = null;
+	}
+
+	record Tweet {
+		union {null, array<double>} coordinates = null;
+		long created_at;
+		Entities entities;
+		union {int, null} favorite_count = 0;
+		boolean favorited;
+		long id;
+		union {null, string} in_reply_to_screen_name = null;
+		union {null, long} in_reply_to_status_id = null;
+		union {null, long} in_reply_to_user_id = null;
+		union {null, string} lang = null;
+		union {null, Place} place = null;
+		boolean possibly_sensitive;
+		union {null, Tweet} quoted_status = null;
+		union {null, Tweet} retweeted_status = null;
+		int retweet_count;
+		boolean retweeted;
+		boolean truncated;
+		string source;
+		string text;
+		User user;
+		union {null, array<string>} withheld_in_countries = null;
+	}
+}

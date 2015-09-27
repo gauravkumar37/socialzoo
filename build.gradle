@@ -2,20 +2,19 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
 
+	version = '1.0-SNAPSHOT'
+
 	repositories {
 		mavenCentral()
 		maven {
 			url "https://repository.cloudera.com/artifactory/cloudera-repos/"
 		}
+		maven {
+			url "http://packages.confluent.io/maven/"
+		}
 	}
 
 	dependencies {
-		
 	}
 
-	version = '1.0-SNAPSHOT'
-
-	jar {
-		manifest.attributes provider: 'socialzoo.com'
-	}
 }
