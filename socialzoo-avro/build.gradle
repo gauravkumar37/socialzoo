@@ -1,0 +1,4 @@
+task compile(type: Copy) {
+	into "$buildDir/libext"
+	from configurations.runtime
+}

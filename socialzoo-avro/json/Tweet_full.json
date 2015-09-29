@@ -1,0 +1,690 @@
+{
+	"contributors": [
+		819797
+	],
+	"coordinates": {
+		"coordinates": [
+			-75.14310264,
+			40.05701649
+		],
+		"type": "Point"
+	},
+	"created_at": "Sun Sep 20 13:12:07 +0000 2015",
+	"entities": {
+		"hashtags": [
+			{
+				"text": "devnestSF",
+				"indices": [
+					6,
+					16
+				]
+			}
+		],
+		"symbols": [
+			{
+				"text": "PEP",
+				"indices": [
+					0,
+					4
+				]
+			},
+			{
+				"text": "COKE",
+				"indices": [
+					8,
+					13
+				]
+			}
+		],
+		"user_mentions": [
+			{
+				"screen_name": "SweetLoveMsg",
+				"name": "Movie Quotes",
+				"id": 111946118,
+				"id_str": "111946118",
+				"indices": [
+					3,
+					16
+				]
+			}
+		],
+		"urls": [
+			{
+				"url": "https://t.co/XdXRudPXH5",
+				"expanded_url": "https://blog.twitter.com/2013/rich-photo-experience-now-in-embedded-tweets-3",
+				"display_url": "blog.twitter.com/2013/rich-phot…",
+				"indices": [
+					80,
+					103
+				]
+			}
+		],
+		"media": [
+			{
+				"id": 645366765468299300,
+				"id_str": "645366765468299264",
+				"indices": [
+					42,
+					64
+				],
+				"media_url": "http://pbs.twimg.com/media/CPTNp2WUsAAYoUV.jpg",
+				"media_url_https": "https://pbs.twimg.com/media/CPTNp2WUsAAYoUV.jpg",
+				"url": "http://t.co/nQp77Fid7L",
+				"display_url": "pic.twitter.com/nQp77Fid7L",
+				"expanded_url": "http://twitter.com/SweetLoveMsg/status/645366765594112000/photo/1",
+				"type": "photo",
+				"sizes": {
+					"medium": {
+						"w": 500,
+						"h": 500,
+						"resize": "fit"
+					},
+					"small": {
+						"w": 340,
+						"h": 340,
+						"resize": "fit"
+					},
+					"thumb": {
+						"w": 150,
+						"h": 150,
+						"resize": "crop"
+					},
+					"large": {
+						"w": 500,
+						"h": 500,
+						"resize": "fit"
+					}
+				},
+				"source_status_id": 645366765594112000,
+				"source_status_id_str": "645366765594112000",
+				"source_user_id": 111946118,
+				"source_user_id_str": "111946118"
+			}
+		]
+	},
+	"extended_entities": {
+		"media": [
+			{
+				"display_url": "pic.twitter.com/31JoMS50ha",
+				"expanded_url": "http://twitter.com/twitter/status/560070183650213889/video/1",
+				"features": {},
+				"id": 560070131976392700,
+				"id_str": "560070131976392705",
+				"indices": [
+					110,
+					132
+				],
+				"media_url": "http://pbs.twimg.com/ext_tw_video_thumb/560070131976392705/pu/img/TcG_ep5t-iqdLV5R.jpg",
+				"media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/560070131976392705/pu/img/TcG_ep5t-iqdLV5R.jpg",
+				"sizes": {
+					"large": {
+						"h": 576,
+						"resize": "fit",
+						"w": 1024
+					},
+					"medium": {
+						"h": 337,
+						"resize": "fit",
+						"w": 600
+					},
+					"small": {
+						"h": 191,
+						"resize": "fit",
+						"w": 340
+					},
+					"thumb": {
+						"h": 150,
+						"resize": "crop",
+						"w": 150
+					}
+				},
+				"type": "video",
+				"url": "http://t.co/31JoMS50ha",
+				"video_info": {
+					"aspect_ratio": [
+						16,
+						9
+					],
+					"duration_millis": 30033,
+					"variants": [
+						{
+							"bitrate": 2176000,
+							"content_type": "video/mp4",
+							"url": "https://video.twimg.com/ext_tw_video/560070131976392705/pu/vid/1280x720/c4E56sl91ZB7cpYi.mp4"
+						},
+						{
+							"bitrate": 320000,
+							"content_type": "video/mp4",
+							"url": "https://video.twimg.com/ext_tw_video/560070131976392705/pu/vid/320x180/nXXsvs7vOhcMivwl.mp4"
+						},
+						{
+							"bitrate": 832000,
+							"content_type": "video/webm",
+							"url": "https://video.twimg.com/ext_tw_video/560070131976392705/pu/vid/640x360/vmLr5JlVs2kBLrXS.webm"
+						},
+						{
+							"bitrate": 832000,
+							"content_type": "video/mp4",
+							"url": "https://video.twimg.com/ext_tw_video/560070131976392705/pu/vid/640x360/vmLr5JlVs2kBLrXS.mp4"
+						},
+						{
+							"content_type": "application/x-mpegURL",
+							"url": "https://video.twimg.com/ext_tw_video/560070131976392705/pu/pl/r1kgzh5PmLgium3-.m3u8"
+						}
+					]
+				}
+			}
+		]
+	},
+	"favorite_count": 0,
+	"favorited": false,
+	"geo": null,
+	"id": 645586235998666800,
+	"id_str": "645586235998666753",
+	"in_reply_to_screen_name": null,
+	"in_reply_to_status_id": null,
+	"in_reply_to_status_id_str": null,
+	"in_reply_to_user_id": null,
+	"in_reply_to_user_id_str": null,
+	"is_quote_status": false,
+	"lang": "de",
+	"metadata": {
+		"iso_language_code": "de",
+		"result_type": "recent"
+	},
+	"place": {
+		"attributes": {
+			"street_address": "795 Folsom St",
+			"623:id": "210176",
+			"twitter": "twitter"
+		},
+		"bounding_box": {
+			"coordinates": [
+				[
+					[
+						-122.400612831116,
+						37.7821120598956
+					],
+					[
+						-122.400612831116,
+						37.7821120598956
+					],
+					[
+						-122.400612831116,
+						37.7821120598956
+					],
+					[
+						-122.400612831116,
+						37.7821120598956
+					]
+				]
+			],
+			"type": "Polygon"
+		},
+		"contained_within": [
+			{
+				"name": "San Francisco",
+				"country": "United States",
+				"country_code": "US",
+				"attributes": {},
+				"url": "https://api.twitter.com/1.1/geo/id/5a110d312052166f.json",
+				"bounding_box": {
+					"coordinates": [
+						[
+							[
+								-122.51368188,
+								37.70813196
+							],
+							[
+								-122.35845384,
+								37.70813196
+							],
+							[
+								-122.35845384,
+								37.83245301
+							],
+							[
+								-122.51368188,
+								37.83245301
+							]
+						]
+					],
+					"type": "Polygon"
+				},
+				"id": "5a110d312052166f",
+				"full_name": "San Francisco, CA",
+				"place_type": "city"
+			}
+		],
+		"country": "United States",
+		"country_code": "US",
+		"full_name": "Twitter HQ, San Francisco",
+		"geometry": {
+			"coordinates": [
+				-122.400612831116,
+				37.7821120598956
+			],
+			"type": "Point"
+		},
+		"id": "247f43d441defc03",
+		"name": "Twitter HQ",
+		"place_type": "poi",
+		"polylines": [],
+		"url": "https://api.twitter.com/1.1/geo/id/247f43d441defc03.json"
+	},
+	"possibly_sensitive": false,
+	"quoted_status": {
+		"contributors": null,
+		"coordinates": null,
+		"created_at": "Tue Sep 29 02:56:34 +0000 2015",
+		"entities": {
+			"hashtags": [
+				{
+					"text": "AkshayLiveOnfame",
+					"indices": [
+						21,
+						38
+					]
+				}
+			],
+			"symbols": [],
+			"user_mentions": [],
+			"urls": [],
+			"media": [
+				{
+					"id": 648692796048568300,
+					"id_str": "648692796048568320",
+					"indices": [
+						39,
+						61
+					],
+					"media_url": "http://pbs.twimg.com/media/CQCeqTzUcAAdnCy.jpg",
+					"media_url_https": "https://pbs.twimg.com/media/CQCeqTzUcAAdnCy.jpg",
+					"url": "http://t.co/hYrabCX1oa",
+					"display_url": "pic.twitter.com/hYrabCX1oa",
+					"expanded_url": "http://twitter.com/MissusDesai/status/648692817343049728/photo/1",
+					"type": "photo",
+					"sizes": {
+						"large": {
+							"w": 900,
+							"h": 846,
+							"resize": "fit"
+						},
+						"thumb": {
+							"w": 150,
+							"h": 150,
+							"resize": "crop"
+						},
+						"small": {
+							"w": 340,
+							"h": 319,
+							"resize": "fit"
+						},
+						"medium": {
+							"w": 600,
+							"h": 564,
+							"resize": "fit"
+						}
+					}
+				}
+			]
+		},
+		"extended_entities": {
+			"media": [
+				{
+					"id": 648692796048568300,
+					"id_str": "648692796048568320",
+					"indices": [
+						39,
+						61
+					],
+					"media_url": "http://pbs.twimg.com/media/CQCeqTzUcAAdnCy.jpg",
+					"media_url_https": "https://pbs.twimg.com/media/CQCeqTzUcAAdnCy.jpg",
+					"url": "http://t.co/hYrabCX1oa",
+					"display_url": "pic.twitter.com/hYrabCX1oa",
+					"expanded_url": "http://twitter.com/MissusDesai/status/648692817343049728/photo/1",
+					"type": "photo",
+					"sizes": {
+						"large": {
+							"w": 900,
+							"h": 846,
+							"resize": "fit"
+						},
+						"thumb": {
+							"w": 150,
+							"h": 150,
+							"resize": "crop"
+						},
+						"small": {
+							"w": 340,
+							"h": 319,
+							"resize": "fit"
+						},
+						"medium": {
+							"w": 600,
+							"h": 564,
+							"resize": "fit"
+						}
+					}
+				}
+			]
+		},
+		"favorite_count": 0,
+		"favorited": false,
+		"geo": null,
+		"id": 648692817343049700,
+		"id_str": "648692817343049728",
+		"in_reply_to_screen_name": null,
+		"in_reply_to_status_id": null,
+		"in_reply_to_status_id_str": null,
+		"in_reply_to_user_id": null,
+		"in_reply_to_user_id_str": null,
+		"is_quote_status": false,
+		"lang": "en",
+		"place": null,
+		"possibly_sensitive": false,
+		"possibly_sensitive_appealable": false,
+		"retweet_count": 0,
+		"retweeted": false,
+		"source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+		"text": "In an hour from now! #AkshayLiveOnfame http://t.co/hYrabCX1oa",
+		"truncated": false,
+		"user": {
+			"contributors_enabled": false,
+			"created_at": "Sat Aug 22 09:08:57 +0000 2009",
+			"default_profile": false,
+			"default_profile_image": false,
+			"description": "Journalist | Realist | Optimist | Feminist | @GossipGirl on the #fame app.",
+			"entities": {
+				"description": {
+					"urls": []
+				}
+			},
+			"favourites_count": 84,
+			"follow_request_sent": false,
+			"followers_count": 7537,
+			"following": false,
+			"friends_count": 242,
+			"geo_enabled": true,
+			"has_extended_profile": false,
+			"id": 67852897,
+			"id_str": "67852897",
+			"is_translation_enabled": false,
+			"is_translator": false,
+			"lang": "en",
+			"listed_count": 37,
+			"location": "Mumbai ",
+			"name": "Sneha Menon Desai",
+			"notifications": false,
+			"profile_background_color": "94D487",
+			"profile_background_image_url": "http://abs.twimg.com/images/themes/theme14/bg.gif",
+			"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme14/bg.gif",
+			"profile_background_tile": true,
+			"profile_banner_url": "https://pbs.twimg.com/profile_banners/67852897/1443355961",
+			"profile_image_url": "http://pbs.twimg.com/profile_images/646354394888335361/Wyn_i-cu_normal.jpg",
+			"profile_image_url_https": "https://pbs.twimg.com/profile_images/646354394888335361/Wyn_i-cu_normal.jpg",
+			"profile_link_color": "89C9FA",
+			"profile_sidebar_border_color": "EEEEEE",
+			"profile_sidebar_fill_color": "EFEFEF",
+			"profile_text_color": "333333",
+			"profile_use_background_image": true,
+			"protected": false,
+			"screen_name": "MissusDesai",
+			"statuses_count": 7440,
+			"time_zone": "Mumbai",
+			"url": null,
+			"utc_offset": 19800,
+			"verified": false
+		}
+	},
+	"quoted_status_id": 648692817343049700,
+	"quoted_status_id_str": "648692817343049728",
+	"retweet_count": 245,
+	"retweeted": false,
+	"retweeted_status": {
+		"contributors": null,
+		"coordinates": null,
+		"created_at": "Sat Sep 19 22:40:01 +0000 2015",
+		"entities": {
+			"hashtags": [],
+			"symbols": [],
+			"user_mentions": [],
+			"urls": [],
+			"media": [
+				{
+					"id": 645366765468299300,
+					"id_str": "645366765468299264",
+					"indices": [
+						24,
+						46
+					],
+					"media_url": "http://pbs.twimg.com/media/CPTNp2WUsAAYoUV.jpg",
+					"media_url_https": "https://pbs.twimg.com/media/CPTNp2WUsAAYoUV.jpg",
+					"url": "http://t.co/nQp77Fid7L",
+					"display_url": "pic.twitter.com/nQp77Fid7L",
+					"expanded_url": "http://twitter.com/SweetLoveMsg/status/645366765594112000/photo/1",
+					"type": "photo",
+					"sizes": {
+						"medium": {
+							"w": 500,
+							"h": 500,
+							"resize": "fit"
+						},
+						"small": {
+							"w": 340,
+							"h": 340,
+							"resize": "fit"
+						},
+						"thumb": {
+							"w": 150,
+							"h": 150,
+							"resize": "crop"
+						},
+						"large": {
+							"w": 500,
+							"h": 500,
+							"resize": "fit"
+						}
+					}
+				}
+			]
+		},
+		"favorite_count": 283,
+		"favorited": false,
+		"geo": null,
+		"id": 645366765594112000,
+		"id_str": "645366765594112000",
+		"in_reply_to_screen_name": null,
+		"in_reply_to_status_id": null,
+		"in_reply_to_status_id_str": null,
+		"in_reply_to_user_id": null,
+		"in_reply_to_user_id_str": null,
+		"is_quote_status": false,
+		"lang": "de",
+		"metadata": {
+			"iso_language_code": "de",
+			"result_type": "recent"
+		},
+		"place": null,
+		"possibly_sensitive": false,
+		"retweet_count": 245,
+		"retweeted": false,
+		"source": "<a hrvTweetSchadulingApp</a>",
+		"text": "Movie: 'Gangster Squad' http://t.co/nQp77Fid7L",
+		"truncated": false,
+		"user": {
+			"contributors_enabled": false,
+			"created_at": "Sat Feb 06 18:06:39 +0000 2010",
+			"default_profile": false,
+			"default_profile_image": false,
+			"description": "Love does not consist in gazing at each other, \nbut in looking outward in the same direction.\n | Business- awesometwitterbusiness@gmail.com",
+			"entities": {
+				"description": {
+					"urls": []
+				}
+			},
+			"favourites_count": 1215,
+			"follow_request_sent": false,
+			"followers_count": 402238,
+			"following": false,
+			"friends_count": 317,
+			"geo_enabled": false,
+			"has_extended_profile": false,
+			"id": 111946118,
+			"id_str": "111946118",
+			"is_translation_enabled": false,
+			"is_translator": false,
+			"lang": "en",
+			"listed_count": 588,
+			"location": "hahaha",
+			"name": "Movie Quotes",
+			"notifications": false,
+			"profile_background_color": "F5ABB5",
+			"profile_background_image_url": "http://abs.twimg.com/images/themes/theme11/bg.gif",
+			"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme11/bg.gif",
+			"profile_background_tile": true,
+			"profile_banner_url": "https://pbs.twimg.com/profile_banners/111946118/1433277191",
+			"profile_image_url": "http://pbs.twimg.com/profile_images/605839197895663618/xjATz07P_normal.jpg",
+			"profile_image_url_https": "https://pbs.twimg.com/profile_images/605839197895663618/xjATz07P_normal.jpg",
+			"profile_link_color": "F5ABB5",
+			"profile_sidebar_border_color": "FFFFFF",
+			"profile_sidebar_fill_color": "E5507E",
+			"profile_text_color": "362720",
+			"profile_use_background_image": false,
+			"protected": false,
+			"screen_name": "SweetLoveMsg",
+			"status": {
+				"contributors": null,
+				"coordinates": null,
+				"created_at": "Tue Apr 17 16:38:18 +0000 2012",
+				"entities": {
+					"urls": [],
+					"hashtags": [],
+					"user_mentions": [
+						{
+							"name": "Micah McVicker",
+							"id_str": "166661446",
+							"id": 166661446,
+							"indices": [
+								0,
+								14
+							],
+							"screen_name": "MicahMcVicker"
+						}
+					]
+				},
+				"favorited": false,
+				"geo": null,
+				"id": 192290904646754300,
+				"id_str": "192290904646754304",
+				"in_reply_to_screen_name": "MicahMcVicker",
+				"in_reply_to_status_id": 192290470427246600,
+				"in_reply_to_status_id_str": "192290470427246594",
+				"in_reply_to_user_id": 166661446,
+				"in_reply_to_user_id_str": "166661446",
+				"place": null,
+				"retweet_count": 0,
+				"retweeted": false,
+				"source": "<a href=\"http://sites.google.com/site/yorufukurou/\">YoruFukurou</a>",
+				"text": "@MicahMcVicker make sure you're using include_rts=true and no other filters, then walking your timeline by since_id and max_id",
+				"truncated": false
+			},
+			"statuses_count": 23842,
+			"time_zone": "New Delhi",
+			"url": null,
+			"utc_offset": 19800,
+			"verified": false
+		}
+	},
+	"source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+	"text": "RT @SweetLoveMsg: Movie: 'Gangster Squad' http://t.co/nQp77Fid7L",
+	"truncated": false,
+	"user": {
+		"contributors_enabled": false,
+		"created_at": "Sun Jul 05 13:05:58 +0000 2015",
+		"default_profile": true,
+		"default_profile_image": false,
+		"description": "✴ Lost and Found ✴",
+		"entities": {
+			"description": {
+				"urls": []
+			}
+		},
+		"favourites_count": 170,
+		"follow_request_sent": false,
+		"followers_count": 1069,
+		"following": false,
+		"friends_count": 2009,
+		"geo_enabled": false,
+		"has_extended_profile": false,
+		"id": 3269017824,
+		"id_str": "3269017824",
+		"is_translation_enabled": false,
+		"is_translator": false,
+		"lang": "en",
+		"listed_count": 7,
+		"location": "haha",
+		"name": "Pepsi",
+		"notifications": false,
+		"profile_background_color": "C0DEED",
+		"profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+		"profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+		"profile_background_tile": false,
+		"profile_banner_url": "https://pbs.twimg.com/profile_banners/3269017824/1437879946",
+		"profile_image_url": "http://pbs.twimg.com/profile_images/632379480288264192/k3FaYcF7_normal.jpg",
+		"profile_image_url_https": "https://pbs.twimg.com/profile_images/632379480288264192/k3FaYcF7_normal.jpg",
+		"profile_link_color": "0084B4",
+		"profile_sidebar_border_color": "C0DEED",
+		"profile_sidebar_fill_color": "DDEEF6",
+		"profile_text_color": "333333",
+		"profile_use_background_image": true,
+		"protected": false,
+		"screen_name": "Pepsi_428",
+		"statuses_count": 2886,
+		"time_zone": null,
+		"url": null,
+		"utc_offset": null,
+		"verified": false,
+		"status": {
+			"contributors": null,
+			"coordinates": null,
+			"created_at": "Tue Apr 17 16:38:18 +0000 2012",
+			"entities": {
+				"urls": [],
+				"hashtags": [],
+				"user_mentions": [
+					{
+						"name": "Micah McVicker",
+						"id_str": "166661446",
+						"id": 166661446,
+						"indices": [
+							0,
+							14
+						],
+						"screen_name": "MicahMcVicker"
+					}
+				]
+			},
+			"favorited": false,
+			"geo": null,
+			"id": 192290904646754300,
+			"id_str": "192290904646754304",
+			"in_reply_to_screen_name": "MicahMcVicker",
+			"in_reply_to_status_id": 192290470427246600,
+			"in_reply_to_status_id_str": "192290470427246594",
+			"in_reply_to_user_id": 166661446,
+			"in_reply_to_user_id_str": "166661446",
+			"place": null,
+			"retweet_count": 0,
+			"retweeted": false,
+			"source": "<a href=\"http://sites.google.com/site/yorufukurou/\">YoruFukurou</a>",
+			"text": "@MicahMcVicker make sure you're using include_rts=true and no other filters, then walking your timeline by since_id and max_id",
+			"truncated": false
+		}
+	},
+	"withheld_in_countries": [
+		"GR",
+		"HK",
+		"MY"
+	]
+}

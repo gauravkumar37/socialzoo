@@ -101,54 +101,62 @@ public class AvroHelper {
 			builderTweet.set("place",
 					buildPlace(schema.getField("place").schema().getTypes().get(1), status.getPlace()));
 
-		Schema schemaUser = schema.getField("user").schema();
-		GenericRecordBuilder builderUser = new GenericRecordBuilder(schemaUser);
 		User user = status.getUser();
-		builderUser.set("contributors_enabled", user.isContributorsEnabled());
-		builderUser.set("created_at", user.getCreatedAt().getTime());
-		builderUser.set("default_profile", user.isDefaultProfile());
-		builderUser.set("default_profile_image", user.isDefaultProfileImage());
-		builderUser.set("description", user.getDescription());
-		builderUser.set("entities", buildURLEntity(schemaUser.getField("entities").schema(), user.getURLEntity()));
-		builderUser.set("favourites_count", user.getFavouritesCount());
-		builderUser.set("followers_count", user.getFollowersCount());
-		builderUser.set("friends_count", user.getFriendsCount());
-		builderUser.set("geo_enabled", user.isGeoEnabled());
-		builderUser.set("id", user.getId());
-		builderUser.set("is_translator", user.isTranslator());
-		builderUser.set("lang", user.getLang());
-		builderUser.set("listed_count", user.getListedCount());
-		builderUser.set("location", user.getLocation());
-		builderUser.set("name", user.getName());
-		builderUser.set("screen_name", user.getScreenName());
-		builderUser.set("profile_background_color", user.getProfileBackgroundColor());
-		builderUser.set("profile_background_image_url", user.getProfileBackgroundImageURL());
-		builderUser.set("profile_background_image_url_https", user.getProfileBackgroundImageUrlHttps());
-		builderUser.set("profile_background_tile", user.isProfileBackgroundTiled());
-		builderUser.set("profile_banner_url", user.getProfileBannerURL());
-		builderUser.set("profile_image_url", user.getProfileImageURL());
-		builderUser.set("profile_image_url_https", user.getProfileBackgroundImageUrlHttps());
-		builderUser.set("profile_link_color", user.getProfileLinkColor());
-		builderUser.set("profile_sidebar_border_color", user.getProfileSidebarBorderColor());
-		builderUser.set("profile_sidebar_fill_color", user.getProfileSidebarFillColor());
-		builderUser.set("profile_text_color", user.getProfileTextColor());
-		builderUser.set("profile_use_background_image", user.isProfileUseBackgroundImage());
-		builderUser.set("protected", user.isProtected());
-		builderUser.set("show_all_inline_media", user.isShowAllInlineMedia());
-		builderUser.set("statuses_count", user.getStatusesCount());
-		builderUser.set("time_zone", user.getTimeZone());
-		builderUser.set("url", user.getURL());
-		builderUser.set("utc_offset", user.getUtcOffset());
-		builderUser.set("verified", user.isVerified());
-		if (user.getWithheldInCountries() != null)
-			builderUser.set("withheld_in_countries", Arrays.asList(user.getWithheldInCountries()));
-		builderTweet.set("user", builderUser.build());
-		if (status.getQuotedStatus() != null)
+		if (user != null && schema.getField("user") != null) {
+			Schema schemaUser = schema.getField("user").schema();
+			GenericRecordBuilder builderUser = new GenericRecordBuilder(schemaUser);
+			builderUser.set("contributors_enabled", user.isContributorsEnabled());
+			builderUser.set("created_at", user.getCreatedAt().getTime());
+			builderUser.set("default_profile", user.isDefaultProfile());
+			builderUser.set("default_profile_image", user.isDefaultProfileImage());
+			builderUser.set("description", user.getDescription());
+			builderUser.set("entities", buildURLEntity(schemaUser.getField("entities").schema(), user.getURLEntity()));
+			builderUser.set("favourites_count", user.getFavouritesCount());
+			builderUser.set("followers_count", user.getFollowersCount());
+			builderUser.set("friends_count", user.getFriendsCount());
+			builderUser.set("geo_enabled", user.isGeoEnabled());
+			builderUser.set("id", user.getId());
+			builderUser.set("is_translator", user.isTranslator());
+			builderUser.set("lang", user.getLang());
+			builderUser.set("listed_count", user.getListedCount());
+			builderUser.set("location", user.getLocation());
+			builderUser.set("name", user.getName());
+			builderUser.set("screen_name", user.getScreenName());
+			builderUser.set("profile_background_color", user.getProfileBackgroundColor());
+			builderUser.set("profile_background_image_url", user.getProfileBackgroundImageURL());
+			builderUser.set("profile_background_image_url_https", user.getProfileBackgroundImageUrlHttps());
+			builderUser.set("profile_background_tile", user.isProfileBackgroundTiled());
+			builderUser.set("profile_banner_url", user.getProfileBannerURL());
+			builderUser.set("profile_image_url", user.getProfileImageURL());
+			builderUser.set("profile_image_url_https", user.getProfileBackgroundImageUrlHttps());
+			builderUser.set("profile_link_color", user.getProfileLinkColor());
+			builderUser.set("profile_sidebar_border_color", user.getProfileSidebarBorderColor());
+			builderUser.set("profile_sidebar_fill_color", user.getProfileSidebarFillColor());
+			builderUser.set("profile_text_color", user.getProfileTextColor());
+			builderUser.set("profile_use_background_image", user.isProfileUseBackgroundImage());
+			builderUser.set("protected", user.isProtected());
+			builderUser.set("show_all_inline_media", user.isShowAllInlineMedia());
+			builderUser.set("statuses_count", user.getStatusesCount());
+			builderUser.set("time_zone", user.getTimeZone());
+			builderUser.set("url", user.getURL());
+			builderUser.set("utc_offset", user.getUtcOffset());
+			builderUser.set("verified", user.isVerified());
+			if (user.getStatus() != null && schemaUser.getField("status") != null)
+				builderUser.set("status",
+						buildTweet(schemaUser.getField("status").schema().getTypes().get(1), user.getStatus()));
+			if (user.getWithheldInCountries() != null)
+				builderUser.set("withheld_in_countries", Arrays.asList(user.getWithheldInCountries()));
+			builderTweet.set("user", builderUser.build());
+		}
+
+		if (status.getQuotedStatus() != null && schema.getField("quoted_status") != null)
 			builderTweet.set("quoted_status",
 					buildTweet(schema.getField("quoted_status").schema().getTypes().get(1), status.getQuotedStatus()));
-		if (status.getRetweetedStatus() != null)
+
+		if (status.getRetweetedStatus() != null && schema.getField("retweeted_status") != null)
 			builderTweet.set("retweeted_status", buildTweet(
 					schema.getField("retweeted_status").schema().getTypes().get(1), status.getRetweetedStatus()));
+
 		return builderTweet.build();
 	}
 
@@ -323,14 +331,13 @@ public class AvroHelper {
 		builderPlace.set("bounding_box", getPlaceCoordinates(place.getBoundingBoxCoordinates()));
 		if (place.getGeometryCoordinates() != null)
 			builderPlace.set("geometry", getPlaceCoordinates(place.getGeometryCoordinates()));
-		if (place.getContainedWithIn() != null) {
-			List<GenericRecord> listPlaceContainedWithin = new ArrayList<GenericRecord>();
-			for (Place place2 : place.getContainedWithIn()) {
-				listPlaceContainedWithin.add(buildPlace(schemaPlace, place2));
-			}
-			builderPlace.set("contained_within", listPlaceContainedWithin);
-		}
-		return builderPlace.build();
+		/*
+		 * if (place.getContainedWithIn() != null) { List<GenericRecord>
+		 * listPlaceContainedWithin = new ArrayList<GenericRecord>(); for (Place
+		 * place2 : place.getContainedWithIn()) {
+		 * listPlaceContainedWithin.add(buildPlace(schemaPlace, place2)); }
+		 * builderPlace.set("contained_within", listPlaceContainedWithin); }
+		 */ return builderPlace.build();
 	}
 
 	private static List<List<List<Double>>> getPlaceCoordinates(GeoLocation[][] geoLocations) {

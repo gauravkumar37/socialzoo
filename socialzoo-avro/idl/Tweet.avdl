@@ -93,7 +93,7 @@ protocol TweetProtocol {
 		string bounding_box_type;
 		union {null, array<array<array<double>>>} geometry = null;
 		union {null, string} geometry_type = null;
-		union {null, array<Place>} contained_within = null;
+		// union {null, array<Place>} contained_within = null;
 		union {null, string} street_address = null;
 		string country;
 		string country_code;
@@ -102,6 +102,27 @@ protocol TweetProtocol {
 		string name;
 		string place_type;
 		string url;
+	}
+
+	record Tweet3 {
+		union {null, array<double>} coordinates = null;
+		long created_at;
+		Entities entities;
+		union {int, null} favorite_count = 0;
+		boolean favorited;
+		long id;
+		union {null, string} in_reply_to_screen_name = null;
+		union {null, long} in_reply_to_status_id = null;
+		union {null, long} in_reply_to_user_id = null;
+		union {null, string} lang = null;
+		union {null, Place} place = null;
+		boolean possibly_sensitive;
+		int retweet_count;
+		boolean retweeted;
+		boolean truncated;
+		string source;
+		string text;
+		union {null, array<string>} withheld_in_countries = null;
 	}
 
 	record User {
@@ -135,12 +156,37 @@ protocol TweetProtocol {
 		union {null, string} profile_text_color = null;
 		boolean profile_use_background_image;
 		boolean protected;
+		union {null, Tweet3} status = null;
 		boolean show_all_inline_media;
 		int statuses_count;
 		union {null, string} time_zone = null;
 		union {null, string} url = null;
 		union {null, int} utc_offset = null;
 		boolean verified;
+		union {null, array<string>} withheld_in_countries = null;
+	}
+
+	record Tweet2 {
+		union {null, array<double>} coordinates = null;
+		long created_at;
+		Entities entities;
+		union {int, null} favorite_count = 0;
+		boolean favorited;
+		long id;
+		union {null, string} in_reply_to_screen_name = null;
+		union {null, long} in_reply_to_status_id = null;
+		union {null, long} in_reply_to_user_id = null;
+		union {null, string} lang = null;
+		union {null, Place} place = null;
+		boolean possibly_sensitive;
+		union {null, Tweet3} quoted_status = null;
+		union {null, Tweet3} retweeted_status = null;
+		int retweet_count;
+		boolean retweeted;
+		boolean truncated;
+		string source;
+		string text;
+		User user;
 		union {null, array<string>} withheld_in_countries = null;
 	}
 
@@ -157,8 +203,8 @@ protocol TweetProtocol {
 		union {null, string} lang = null;
 		union {null, Place} place = null;
 		boolean possibly_sensitive;
-		union {null, Tweet} quoted_status = null;
-		union {null, Tweet} retweeted_status = null;
+		union {null, Tweet2} quoted_status = null;
+		union {null, Tweet2} retweeted_status = null;
 		int retweet_count;
 		boolean retweeted;
 		boolean truncated;

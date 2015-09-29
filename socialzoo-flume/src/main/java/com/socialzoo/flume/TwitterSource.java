@@ -116,7 +116,7 @@ public class TwitterSource extends AbstractSource implements EventDrivenSource, 
 			CachedSchemaRegistryClient cachedSchemaRegistryClient = new CachedSchemaRegistryClient(
 					context.getString(SCHEMA_REGISTRY_URL), 20);
 			schema = AvroHelper.loadSchemaFromUrl(context.getString(AVRO_SCHEMA_URL));
-			int schemaId = cachedSchemaRegistryClient.register(context.getString(KAFKA_TOPIC), schema);
+			int schemaId = cachedSchemaRegistryClient.register(context.getString(KAFKA_TOPIC) + "-value", schema);
 			LOGGER.info("schemaId: {}", schemaId);
 			schemaIdArray = ByteBuffer.allocate(4).putInt(schemaId).array();
 		} catch (IOException | RestClientException e) {
