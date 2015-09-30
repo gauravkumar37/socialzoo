@@ -1,4 +1,17 @@
-task compile(type: Copy) {
-	into "$buildDir/libext"
-	from configurations.runtime
+repositories {
+	maven {
+		url "https://plugins.gradle.org/m2/"
+	}
 }
+
+dependencies {
+	compile 'org.apache.avro:avro-tools:1.7.7'
+}
+
+task compileIdl (type: JavaExec) {
+	main = 'org.apache.avro.tool.Main'
+	classpath = configurations.runtime
+	args = ['idl2schemata', 'src/main/idl/*', 'build/avsc/']
+}
+
+assemble.dependsOn(compileIdl)

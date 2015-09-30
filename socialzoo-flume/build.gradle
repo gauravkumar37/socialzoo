@@ -10,3 +10,5 @@ task copyToLib(type: Copy) {
 	into "$buildDir/libext"
 	from configurations.runtime
 }
+
+assemble.dependsOn(copyToLib)
