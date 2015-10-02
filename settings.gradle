@@ -1,1 +1,1 @@
-include "socialzoo-flume", "socialzoo-avro"
+include "socialzoo-flume", "socialzoo-avro", "socialzoo-spark-batch"
