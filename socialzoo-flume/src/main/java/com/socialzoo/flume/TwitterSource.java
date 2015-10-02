@@ -158,7 +158,12 @@ public class TwitterSource extends AbstractSource implements EventDrivenSource, 
 			if ((totalIndexedDocs % intervalStats) == 0)
 				logStats();
 			if (listEvents.size() >= maxBatchSize || System.currentTimeMillis() >= batchEndTime) {
-				LOGGER.info("Flushing {} events to channel.", listEvents.size());
+				if (listEvents.size() >= maxBatchSize)
+					LOGGER.info("Batch size of {} is full. Flushing {} events to channel.", listEvents.size(),
+							listEvents.size());
+				if (System.currentTimeMillis() >= batchEndTime)
+					LOGGER.info("Queue time of {}ms is reached. Flushing {} events to channel.", maxBatchDurationMillis,
+							listEvents.size());
 				getChannelProcessor().processEventBatch(listEvents);
 				listEvents.clear();
 				batchEndTime = System.currentTimeMillis() + maxBatchDurationMillis;

@@ -38,23 +38,27 @@ streaming1.sources.source1.twitter.consumerSecret =
 streaming1.sources.source1.twitter.accessToken = 
 streaming1.sources.source1.twitter.accessTokenSecret = 
 streaming1.sources.source1.twitter.track = pepsi, coke
-streaming1.sources.source1.batch.size = 10
+streaming1.sources.source1.batch.size = 100
 streaming1.sources.source1.batch.duration = 20000
-streaming1.sources.source1.interval.stats = 15
-streaming1.sources.source1.kafka.topic = tweets1
+streaming1.sources.source1.interval.stats = 100
+streaming1.sources.source1.kafka.topic = tweets9
+streaming1.sources.source1.debug = true
 streaming1.sources.source1.schema.avro.url = hdfs:///user/gauravk/socialzoo/schema.avsc
 streaming1.sources.source1.schema.registry.url = http://localhost:8081
-streaming1.sources.source1.debug = false
 streaming1.sources.source1.channels = channel1
 
 streaming1.channels.channel1.type = memory
-streaming1.channels.channel1.capacity = 1000
+streaming1.channels.channel1.capacity = 5000
+streaming1.channels.channel1.transactionCapacity = 5000
 
 streaming1.sinks.sink1.type = org.apache.flume.sink.kafka.KafkaSink
-streaming1.sinks.sink1.topic = tweets1
+streaming1.sinks.sink1.topic = tweets9
 streaming1.sinks.sink1.brokerList = localhost:9092
-streaming1.sinks.sink1.batchSize = 10
+streaming1.sinks.sink1.batchSize = 100
 streaming1.sinks.sink1.requiredAcks = 0
+streaming1.sinks.sink1.kafka.producer.type = async
+streaming1.sinks.sink1.kafka.compression.codec = snappy
+streaming1.sinks.sink1.kafka.queue.buffering.max.ms = 20000
 streaming1.sinks.sink1.channel = channel1
 ```
 
