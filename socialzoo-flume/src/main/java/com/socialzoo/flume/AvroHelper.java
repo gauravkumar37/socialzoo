@@ -1,16 +1,5 @@
 package com.socialzoo.flume;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData.Record;
 import org.apache.avro.generic.GenericDatumWriter;
@@ -23,19 +12,15 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import twitter4j.ExtendedMediaEntity;
+import twitter4j.*;
 import twitter4j.ExtendedMediaEntity.Variant;
-import twitter4j.GeoLocation;
-import twitter4j.HashtagEntity;
-import twitter4j.MediaEntity;
 import twitter4j.MediaEntity.Size;
-import twitter4j.Place;
-import twitter4j.Status;
-import twitter4j.SymbolEntity;
-import twitter4j.URLEntity;
-import twitter4j.User;
-import twitter4j.UserMentionEntity;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.*;
 
 public class AvroHelper {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AvroHelper.class);
@@ -63,7 +48,7 @@ public class AvroHelper {
 	}
 
 	public static void tweetToAvro(ByteArrayOutputStream out, Status status, Schema schema) throws IOException {
-		GenericDatumWriter<GenericRecord> gdw = new GenericDatumWriter<GenericRecord>(schema);
+		GenericDatumWriter<GenericRecord> gdw = new GenericDatumWriter<>(schema);
 		Encoder e = EncoderFactory.get().binaryEncoder(out, null);
 		GenericRecord tweet = buildTweet(schema, status);
 		gdw.write(tweet, e);
@@ -165,7 +150,7 @@ public class AvroHelper {
 
 		if (status.getHashtagEntities().length > 0) {
 			Schema schemaHashtagObject = schemaEntities.getField("hashtags").schema().getElementType();
-			List<GenericRecord> listHashtagObjects = new ArrayList<GenericRecord>();
+			List<GenericRecord> listHashtagObjects = new ArrayList<>();
 			for (HashtagEntity hashtagEntity : status.getHashtagEntities()) {
 				GenericRecordBuilder builderHashtagObject = new GenericRecordBuilder(schemaHashtagObject);
 				builderHashtagObject.set("text", hashtagEntity.getText());
@@ -179,7 +164,7 @@ public class AvroHelper {
 
 		if (status.getSymbolEntities().length > 0) {
 			Schema schemaSymbolObject = schemaEntities.getField("symbols").schema().getElementType();
-			List<GenericRecord> listSymbolObject = new ArrayList<GenericRecord>();
+			List<GenericRecord> listSymbolObject = new ArrayList<>();
 			for (SymbolEntity symbolEntity : status.getSymbolEntities()) {
 				GenericRecordBuilder builderSymbolObject = new GenericRecordBuilder(schemaSymbolObject);
 				builderSymbolObject.set("text", symbolEntity.getText());
@@ -193,7 +178,7 @@ public class AvroHelper {
 
 		if (status.getMediaEntities().length > 0) {
 			Schema schemaMediaObject = schemaEntities.getField("media").schema().getElementType();
-			List<GenericRecord> listMediaObject = new ArrayList<GenericRecord>();
+			List<GenericRecord> listMediaObject = new ArrayList<>();
 			for (MediaEntity mediaEntity : status.getMediaEntities()) {
 				GenericRecordBuilder builderMediaObject = new GenericRecordBuilder(schemaMediaObject);
 				builderMediaObject.set("url", mediaEntity.getURL());
@@ -209,7 +194,7 @@ public class AvroHelper {
 
 				Schema schemaSize = schemaMediaObject.getField("sizes").schema().getValueType();
 				GenericRecordBuilder builderSize = new GenericRecordBuilder(schemaSize);
-				Map<String, GenericRecord> mapSizes = new HashMap<String, GenericRecord>(4);
+				Map<String, GenericRecord> mapSizes = new HashMap<>(4);
 				for (int key : mediaEntity.getSizes().keySet()) {
 					Size size = mediaEntity.getSizes().get(key);
 					builderSize.set("h", size.getHeight());
@@ -226,17 +211,16 @@ public class AvroHelper {
 
 		if (status.getURLEntities().length > 0) {
 			Schema schemaURLObject = schemaEntities.getField("urls").schema().getElementType();
-			List<GenericRecord> listURLObject1 = new ArrayList<GenericRecord>();
+			List<GenericRecord> listURLObject1 = new ArrayList<>();
 			for (URLEntity urlEntity : status.getURLEntities())
 				listURLObject1.add(buildURLEntity(schemaURLObject, urlEntity));
-			List<GenericRecord> listURLObject = listURLObject1;
-			builderEntities.set("urls", listURLObject);
+			builderEntities.set("urls", listURLObject1);
 		} else
 			builderEntities.set("urls", Collections.emptyList());
 
 		if (status.getUserMentionEntities().length > 0) {
 			Schema schemaUserMentionObject = schemaEntities.getField("user_mentions").schema().getElementType();
-			List<GenericRecord> listUserMentionObject = new ArrayList<GenericRecord>();
+			List<GenericRecord> listUserMentionObject = new ArrayList<>();
 			for (UserMentionEntity userMentionEntity : status.getUserMentionEntities()) {
 				GenericRecordBuilder builderUserMentionObject = new GenericRecordBuilder(schemaUserMentionObject);
 				builderUserMentionObject.set("name", userMentionEntity.getName());
@@ -253,7 +237,7 @@ public class AvroHelper {
 
 		if (status.getExtendedMediaEntities().length > 0) {
 			Schema schemaExtendedMediaObject = schemaEntities.getField("extended_entities").schema().getElementType();
-			List<GenericRecord> listExtendedMediaObject = new ArrayList<GenericRecord>();
+			List<GenericRecord> listExtendedMediaObject = new ArrayList<>();
 			for (ExtendedMediaEntity extendedMediaEntity : status.getExtendedMediaEntities()) {
 				GenericRecordBuilder builderExtendedMediaObject = new GenericRecordBuilder(schemaExtendedMediaObject);
 				builderExtendedMediaObject.set("url", extendedMediaEntity.getURL());
@@ -269,7 +253,7 @@ public class AvroHelper {
 
 				Schema schemaSize = schemaExtendedMediaObject.getField("sizes").schema().getValueType();
 				GenericRecordBuilder builderSize = new GenericRecordBuilder(schemaSize);
-				Map<String, GenericRecord> mapSizes = new HashMap<String, GenericRecord>(4);
+				Map<String, GenericRecord> mapSizes = new HashMap<>(4);
 				for (int key : extendedMediaEntity.getSizes().keySet()) {
 					Size size = extendedMediaEntity.getSizes().get(key);
 					builderSize.set("h", size.getHeight());
@@ -286,7 +270,7 @@ public class AvroHelper {
 				builderVideoInfo.set("duration_millis", extendedMediaEntity.getVideoDurationMillis());
 
 				Schema schemaVideoVariants = schemaVideoInfo.getField("variants").schema().getElementType();
-				List<GenericRecord> listVideoVariants = new ArrayList<GenericRecord>();
+				List<GenericRecord> listVideoVariants = new ArrayList<>();
 				for (Variant extendedVideoVariant : extendedMediaEntity.getVideoVariants()) {
 					GenericRecordBuilder builderVideoVariant = new GenericRecordBuilder(schemaVideoVariants);
 					builderVideoVariant.set("bitrate", extendedVideoVariant.getBitrate());
@@ -337,15 +321,16 @@ public class AvroHelper {
 		 * place2 : place.getContainedWithIn()) {
 		 * listPlaceContainedWithin.add(buildPlace(schemaPlace, place2)); }
 		 * builderPlace.set("contained_within", listPlaceContainedWithin); }
-		 */ return builderPlace.build();
+		 */
+		return builderPlace.build();
 	}
 
 	private static List<List<List<Double>>> getPlaceCoordinates(GeoLocation[][] geoLocations) {
-		List<List<List<Double>>> listListListBoundingBox = new ArrayList<List<List<Double>>>();
+		List<List<List<Double>>> listListListBoundingBox = new ArrayList<>();
 		for (GeoLocation[] geoLocation1 : geoLocations) {
-			List<List<Double>> listListBoundingBox = new ArrayList<List<Double>>();
+			List<List<Double>> listListBoundingBox = new ArrayList<>();
 			for (GeoLocation geoLocation2 : geoLocation1) {
-				List<Double> listBoundingBox = new ArrayList<Double>();
+				List<Double> listBoundingBox = new ArrayList<>();
 				listBoundingBox.add(geoLocation2.getLatitude());
 				listBoundingBox.add(geoLocation2.getLongitude());
 				listListBoundingBox.add(listBoundingBox);

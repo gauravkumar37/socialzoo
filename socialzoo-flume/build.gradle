@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+sourceCompatibility = 1.7
+
 dependencies {
 	compile 'org.twitter4j:twitter4j-stream:4.0.4'
 	compile 'org.apache.avro:avro:1.7.6-cdh5.3.0'
