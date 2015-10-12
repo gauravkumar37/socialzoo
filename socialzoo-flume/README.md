@@ -23,6 +23,7 @@ For CDH5 (parcel installed), these jars would be present at `/opt/cloudera/parce
 	/var/lib/flume-ng/plugins.d\twitter-source\libext\twitter4j-core-4.0.3.jar
 	/var/lib/flume-ng/plugins.d\twitter-source\libext\twitter4j-stream-4.0.3.jar
 	```
+
 3. We use `Avro IDL` to create and compile the avro schema. The IDL file is located in a separate subproject `socialzoo-avro` under `src/main/idl/Tweet.avdl`. Compile the IDL to avsc file by executing a gradle task `compileIdl` on that project (which is also linked to assemble task). You only need to use `Tweet.avsc` for this source as that schema is self-sufficient.
 4. Sample flume configuration
 	```

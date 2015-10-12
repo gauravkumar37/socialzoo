@@ -3,7 +3,7 @@ package com.socialzoo.twitter
 import java.time.format.DateTimeFormatter
 import java.time.{Instant, LocalDateTime, ZoneId}
 
-object Util {
+class Util {
 
 	def formatDateTime(epochMilli: Long, pattern: String): String = {
 		val dateTime: LocalDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(epochMilli), ZoneId.of("UTC"))
